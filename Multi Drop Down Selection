@@ -1,0 +1,21 @@
+function onEdit(e) {
+var oldValue;
+var newValue;
+var ss=SpreadsheetApp.getActiveSpreadsheet();
+var activeCell = ss.getActiveCell();
+if(activeCell.getColumn() == 54||55||53||57||58||59||60||61||62||63||64 && ss.getActiveSheet().getName()=="LISTER WORK YEET") {
+newValue=e.value;
+oldValue=e.oldValue;
+if(!e.value) {
+activeCell.setValue("");
+}
+else {
+if (!e.oldValue) {
+activeCell.setValue(newValue);
+}
+else {
+activeCell.setValue(oldValue+', '+newValue);
+}
+}
+}
+}
